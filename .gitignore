@@ -2,3 +2,5 @@
 *.pcapng
 roughcode.py
 sam.txt
+credentials.json
+token.json

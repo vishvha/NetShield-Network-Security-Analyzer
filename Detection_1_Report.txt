@@ -1,0 +1,8 @@
+NETSHIELD SECURITY ALERT
+Detection Rule: Repeated Failed TCP Connections
+Status: Suspicious activity detected
+Unique Failed SYNs :37669 
+Detection Window:0.002217 seconds
+Threshold : 6 failed SYNs within 5 Seconds
+Protocol : TCP
+Network Layer : IPv4
