@@ -9,8 +9,8 @@ creds = Credentials.from_authorized_user_file("token.json")
 
 service = build("gmail", "v1", credentials=creds)
 
-msg["From"] = "vishvha24@gmail.com"
-msg["To"] = "vishvha24@gmail.com"
+msg["From"] = "yoursender@gmail.com" # Sender Gmail id 
+msg["To"] = "yourreceiver@gmail.com" # Receiver email id 
 msg["Subject"] = "NetShield Reports"
 
 with open("detection_1_tcp.txt","r") as f:
