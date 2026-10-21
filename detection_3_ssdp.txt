@@ -1,0 +1,11 @@
+NETSHIELD SECURITY ALERT
+
+Detection Rule: High-Volume SSDP Burst
+Status: Suspicious activity detected
+
+Source IP: 192.168.0.1
+Detection Window: 0.013423 seconds
+Threshold: 5 SSDP packets within 1 second
+Protocol: SSDP over UDP
+Port: 1900
+Network Layer: IPv4
