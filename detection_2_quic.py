@@ -11,7 +11,7 @@ packets = rdpcap("D:\\netsheild project\\quic_incomplete_test.pcapng")
 st=set()
 for packet in packets:
     #print(packet)
-    if UDP in packet:
+    if UDP in packet and IP in packet:
        if packet[UDP].sport !=443  and packet[UDP].dport ==443:
            #print(packet)
            if Raw in packet:
@@ -28,7 +28,7 @@ st2= set()
 
 
 for packet in packets:
-    if UDP in packet:
+    if UDP in packet and IP in packet:
         if packet[UDP].sport == 443 and packet[UDP].dport !=443:
             if Raw in packet:
                 data1=packet[Raw].load
@@ -71,7 +71,7 @@ alert=False
 tm=[]
 h=set()
 for packet in packets:
-    if UDP in packet:
+    if UDP in packet and IP in packet:
        if packet[UDP].sport !=443  and packet[UDP].dport ==443:
            if Raw in packet:
                data=packet[Raw].load
@@ -86,7 +86,9 @@ for packet in packets:
                            if len(tm) >= 6:                                    
                                     t=tm[-1]-tm[-6]
                                     if t <= 5:
-                                        print("ALERT !!!, NEEDS INVESTIGATION IN QUIC/UDP")
+                                        print("NETSHIELD SECURITY ALERT")
+                                        print("Detection Rule: Repeated Incomplete QUIC Connections")
+                                        print("Status: Suspicious activity detected")
                                         with open("detection_2_quic.txt","w") as f:
                                             f.write("NETSHIELD SECURITY ALERT\n")
                                             f.write("\n")
@@ -94,7 +96,7 @@ for packet in packets:
                                             f.write("Status : Suspicious activity detected\n")
                                             f.write("\n")
                                             f.write(f"Unique Incomplete QUIC Connections:  {len(a)}\n")
-                                            f.write(f"Detection Window :{t} seconds\n")
+                                            f.write(f"Detection Window: {t} seconds\n")
                                             f.write("Threshold: 6 incomplete QUIC connections within 5 seconds\n")
                                             f.write("Protocol: QUIC over UDP\n")
                                             f.write("Network Layer : IPv4")
