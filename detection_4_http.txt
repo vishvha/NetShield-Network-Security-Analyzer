@@ -1,0 +1,9 @@
+NETSHIELD SECURITY ALERT
+
+Detection Rule: Cleartext Sensitive Data Exposure
+Status: Suspicious activity detected
+
+Reason: Sensitive information detected in unencrypted HTTP traffic
+Protocol: HTTP over TCP
+Port: 80
+Network Layer: IPv4
