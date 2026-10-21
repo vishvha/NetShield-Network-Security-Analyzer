@@ -1,0 +1,11 @@
+NETSHIELD SECURITY ALERT
+
+Detection Rule: Suspicious DNS Subdomains
+Status: Suspicious activity detected
+
+Total Suspicious Queries: 2990
+Unique Suspicious DNS Labels: 1495
+Threshold: First DNS label longer than 25 characters
+Protocol: DNS over UDP
+Port: 53
+Network Layer: IPv4
