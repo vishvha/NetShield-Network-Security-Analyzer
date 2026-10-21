@@ -1,0 +1,10 @@
+NETSHIELD SECURITY ALERT
+
+Detection Rule : Repeated Incomplete QUIC Connections
+Status : Suspicious activity detected
+
+Unique Incomplete QUIC Connections:  35
+Detection Window :0.3046343 seconds
+Threshold: 6 incomplete QUIC connections within 5 seconds
+Protocol: QUIC over UDP
+Network Layer : IPv4
